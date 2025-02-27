@@ -23,7 +23,7 @@ module Api
 
       # POST /api/v1/tasks
       def create
-        @task = Task.new(task_params)
+        @task = Task.new(task_params.merge(completed: false))
         if @task.save
           render json: @task, status: :created
         else
