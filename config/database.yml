@@ -22,10 +22,7 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV["DB_NAME"] %> || task_list_development
-  host: <%= ENV["DB_HOST"] %>
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
+  url: postgresql://task_list_production_6e38_user:QrwAr34AFtELIDZOrq7XI87XulFmzkxg@dpg-cupnjo23esus738gr88g-a/task_list_production_6e38
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -83,10 +80,4 @@ test:
 #
 production:
   <<: *default
-  # database: task_list_production
-  # username: task_list
-  # password: <%= ENV["TASK_LIST_DATABASE_PASSWORD"] %>
-  database: <%= ENV["DB_NAME"] %> || task_list_production
-  host: <%= ENV["DB_HOST"] %>
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
+  url: postgresql://task_list_production_6e38_user:QrwAr34AFtELIDZOrq7XI87XulFmzkxg@dpg-cupnjo23esus738gr88g-a/task_list_production_6e38
